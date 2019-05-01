@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import questionNameAndSayHello from '../index';
+import { sayWelcome, questionNameAndSayHello } from '../index';
 
-console.log('Welcome to the Brain Games!');
+sayWelcome();
 questionNameAndSayHello();
