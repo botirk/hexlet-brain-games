@@ -1,6 +1,6 @@
 {
   "name": "brain-games-by-botirk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "game developed for hexlet.io education course",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,11 @@
     "@babel/core": "*",
     "@babel/cli": "*",
     "@babel/node": "*",
-    "@babel/preset-env": "*"
+    "@babel/preset-env": "*",
+    "eslint": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*",
+    "babel-eslint": "*"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
