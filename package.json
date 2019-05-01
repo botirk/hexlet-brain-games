@@ -1,10 +1,11 @@
 {
   "name": "brain-games-by-botirk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "game developed for hexlet.io education course",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -21,20 +22,19 @@
     "url": "https://github.com/botirk/project-lvl1-s486/issues"
   },
   "homepage": "https://github.com/botirk/project-lvl1-s486#readme",
+  "dependencies": {
+    "readline-sync": "*"
+  },
   "devDependencies": {
     "@babel/core": "*",
     "@babel/cli": "*",
     "@babel/node": "*",
     "@babel/preset-env": "*"
   },
-  "scripts": {
-	"build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-	"prepublishOnly": "npm run build"
-  },
   "bin": {
-	"brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js"
   },
   "files": [
-	"dist"
+    "dist"
   ]
 }
