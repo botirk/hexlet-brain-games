@@ -19,3 +19,4 @@ lint:
 	npx eslint src/bin/brain-calc.js
 	npx eslint src/bin/brain-gcd.js
 	npx eslint src/bin/brain-progression.js
+	npx eslint src/bin/brain-prime.js
