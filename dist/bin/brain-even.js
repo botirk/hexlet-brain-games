@@ -3,17 +3,5 @@
 
 var _index = require("../index");
 
-// hello + name
-(0, _index.sayWelcome)();
-const name = (0, _index.questionNameAndSayHello)(); // instruction
-
-(0, _index.instructEven)(); // until N correct results
-
-const requiredCorrectResults = 3;
-
-for (let i = 0; i < requiredCorrectResults;) {
-  if ((0, _index.questionEven)()) i += 1;
-}
-
-(0, _index.congratulate)(name);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9iaW4vYnJhaW4tZXZlbi5qcyJdLCJuYW1lcyI6WyJuYW1lIiwicmVxdWlyZWRDb3JyZWN0UmVzdWx0cyIsImkiXSwibWFwcGluZ3MiOiJBQUFBOzs7QUFFQTs7QUFHQTtBQUNBO0FBQ0EsTUFBTUEsSUFBSSxHQUFHLHFDQUFiLEMsQ0FDQTs7QUFDQSwyQixDQUNBOztBQUNBLE1BQU1DLHNCQUFzQixHQUFHLENBQS9COztBQUNBLEtBQUssSUFBSUMsQ0FBQyxHQUFHLENBQWIsRUFBZ0JBLENBQUMsR0FBR0Qsc0JBQXBCLEdBQTZDO0FBQzNDLE1BQUksMEJBQUosRUFBb0JDLENBQUMsSUFBSSxDQUFMO0FBQ3JCOztBQUNELHlCQUFhRixJQUFiIiwic291cmNlc0NvbnRlbnQiOlsiIyEvdXNyL2Jpbi9lbnYgbm9kZVxuXG5pbXBvcnQge1xuICBzYXlXZWxjb21lLCBxdWVzdGlvbk5hbWVBbmRTYXlIZWxsbywgaW5zdHJ1Y3RFdmVuLCBxdWVzdGlvbkV2ZW4sIGNvbmdyYXR1bGF0ZSxcbn0gZnJvbSAnLi4vaW5kZXgnO1xuLy8gaGVsbG8gKyBuYW1lXG5zYXlXZWxjb21lKCk7XG5jb25zdCBuYW1lID0gcXVlc3Rpb25OYW1lQW5kU2F5SGVsbG8oKTtcbi8vIGluc3RydWN0aW9uXG5pbnN0cnVjdEV2ZW4oKTtcbi8vIHVudGlsIE4gY29ycmVjdCByZXN1bHRzXG5jb25zdCByZXF1aXJlZENvcnJlY3RSZXN1bHRzID0gMztcbmZvciAobGV0IGkgPSAwOyBpIDwgcmVxdWlyZWRDb3JyZWN0UmVzdWx0czspIHtcbiAgaWYgKHF1ZXN0aW9uRXZlbigpKSBpICs9IDE7XG59XG5jb25ncmF0dWxhdGUobmFtZSk7XG4iXX0=
+(0, _index.playGame)((0, _index.gameOfEven)());
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9iaW4vYnJhaW4tZXZlbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0FBRUE7O0FBSUEscUJBQVMsd0JBQVQiLCJzb3VyY2VzQ29udGVudCI6WyIjIS91c3IvYmluL2VudiBub2RlXG5cbmltcG9ydCB7XG4gIGdhbWVPZkV2ZW4sIHBsYXlHYW1lLFxufSBmcm9tICcuLi9pbmRleCc7XG5cbnBsYXlHYW1lKGdhbWVPZkV2ZW4oKSk7XG4iXX0=

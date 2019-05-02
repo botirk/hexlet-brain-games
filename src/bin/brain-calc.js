@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import {
-  gameOfEven, playGame,
+  gameOfCalc, playGame,
 } from '../index';
 
-playGame(gameOfEven);
+playGame(gameOfCalc);
