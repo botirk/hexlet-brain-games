@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 import {
-  gameOfGCD, playGame,
+  playGame,
 } from '../index';
 
-playGame(gameOfGCD());
+import game from '../games/gcd';
+
+playGame(game());

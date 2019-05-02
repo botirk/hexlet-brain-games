@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 import {
-  gameOfPrime, playGame,
+  playGame,
 } from '../index';
 
-playGame(gameOfPrime());
+import game from '../games/prime';
+
+playGame(game());

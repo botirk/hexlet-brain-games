@@ -1,6 +1,6 @@
 {
   "name": "brain-games-by-botirk",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "game developed for hexlet.io education course",
   "main": "index.js",
   "scripts": {
