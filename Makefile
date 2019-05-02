@@ -8,6 +8,8 @@ brain-calc:
 	npx babel-node src/bin/brain-calc.js
 brain-gcd:
 	npx babel-node src/bin/brain-gcd.js
+brain-progression:
+	npx babel-node src/bin/brain-progression.js
 publish:
 	npm publish
 lint:
@@ -16,3 +18,4 @@ lint:
 	npx eslint src/bin/brain-even.js
 	npx eslint src/bin/brain-calc.js
 	npx eslint src/bin/brain-gcd.js
+	npx eslint src/bin/brain-progression.js

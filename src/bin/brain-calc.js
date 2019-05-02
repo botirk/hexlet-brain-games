@@ -4,4 +4,4 @@ import {
   gameOfCalc, playGame,
 } from '../index';
 
-playGame(gameOfCalc);
+playGame(gameOfCalc());

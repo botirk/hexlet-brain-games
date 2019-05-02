@@ -11,8 +11,8 @@ const questionNameAndSayHello = () => {
 };
 
 const congratulate = name => console.log(`\nCongratulations, ${name}!`);
-// every game returns [string, function]
-const gameOfEven = (maxNum = 50) => {
+// every game returns [string, function] function is generator of [question, answer]
+const gameOfEven = (maxNum = 50) => () => {
   const instruction = 'Anwser "yes" if number even otherwise answer "no"';
   const generator = () => {
     const generatedNumber = Math.floor(Math.random() * maxNum);
@@ -23,7 +23,7 @@ const gameOfEven = (maxNum = 50) => {
   return [instruction, generator];
 };
 
-const gameOfCalc = (maxNum = 50, maxNum2 = maxNum / 5) => {
+const gameOfCalc = (maxNum = 50, maxNum2 = maxNum / 5) => () => {
   const instruction = 'What is result of the expression?';
   const generator = () => {
     const genNum1 = Math.floor(Math.random() * maxNum);
@@ -41,7 +41,7 @@ const gameOfCalc = (maxNum = 50, maxNum2 = maxNum / 5) => {
   return [instruction, generator];
 };
 
-const gameOfGCD = (maxNum = 50) => {
+const gameOfGCD = (maxNum = 50) => () => {
   const instruction = 'Find the greatest common divisor of given numbers.';
   const generator = () => {
     const genNum1 = Math.floor(Math.random() * maxNum);
@@ -54,11 +54,37 @@ const gameOfGCD = (maxNum = 50) => {
   return [instruction, generator];
 };
 
-const playGame = (game, numCorrectGames = 3, maxNum = 50) => {
+const gameOfProgression = (maxNum = 50, progCount = 10, minStep = 2,
+  maxStep = minStep + 9) => () => {
+  // you cant guess progression with less than 3 numbers, so fix it
+  const alteredProgCount = progCount < 3 ? 3 : progCount;
+  const instruction = 'What number is missing in the progression?';
+  const generator = () => {
+    const step = minStep + Math.floor(Math.random() * maxStep);
+    // iterative process - generates array
+    const genIter = (result, lastNum, i) => {
+      if (i === 0) return result;
+      const newLastNum = lastNum + step;
+      result.push(newLastNum);
+      return genIter(result, newLastNum, i - 1);
+    };
+    const genProgression = genIter([], Math.floor(Math.random() * maxNum), alteredProgCount);
+    // generated missing number index
+    const genMissingNumIndex = Math.floor(Math.random() * alteredProgCount);
+    const answer = String(genProgression[genMissingNumIndex]);
+    // replace missing index with two dots
+    genProgression[genMissingNumIndex] = '..';
+    const question = genProgression.join(' ');
+    return [question, answer];
+  };
+  return [instruction, generator];
+};
+
+const playGame = (game, numCorrectGames = 3) => {
   sayWelcome();
   const name = questionNameAndSayHello();
 
-  const [instruction, generator] = game(maxNum);
+  const [instruction, generator] = game();
   console.log(`\n${instruction}`);
   for (let i = 0; i < numCorrectGames;) {
     const [question, answer] = generator();
@@ -73,5 +99,6 @@ const playGame = (game, numCorrectGames = 3, maxNum = 50) => {
 
 export {
   sayWelcome, questionNameAndSayHello, congratulate,
-  gameOfEven, gameOfCalc, gameOfGCD, playGame,
+  gameOfEven, gameOfCalc, gameOfGCD, gameOfProgression,
+  playGame,
 };

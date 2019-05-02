@@ -20,3 +20,6 @@ How to run brain-gcd after global install:
 1. repeat after video
 [![asciicast](https://asciinema.org/a/9pPzzASTeGvf5gKsaq51A7YvC.svg)](https://asciinema.org/a/9pPzzASTeGvf5gKsaq51A7YvC)
 
+How to run brain-progression after global install:
+1. repeat after video
+[![asciicast](https://asciinema.org/a/xW0TjlbNXJTlAoy1yo0cPU0Vm.svg)](https://asciinema.org/a/xW0TjlbNXJTlAoy1yo0cPU0Vm)

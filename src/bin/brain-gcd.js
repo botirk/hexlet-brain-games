@@ -4,4 +4,4 @@ import {
   gameOfGCD, playGame,
 } from '../index';
 
-playGame(gameOfGCD);
+playGame(gameOfGCD());
