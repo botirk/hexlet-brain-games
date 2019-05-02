@@ -41,6 +41,19 @@ const gameOfCalc = (maxNum = 50, maxNum2 = maxNum / 5) => {
   return [instruction, generator];
 };
 
+const gameOfGCD = (maxNum = 50) => {
+  const instruction = 'Find the greatest common divisor of given numbers.';
+  const generator = () => {
+    const genNum1 = Math.floor(Math.random() * maxNum);
+    const genNum2 = Math.floor(Math.random() * maxNum);
+    const nod = (a, b) => (b > 0 ? nod(b, a % b) : a);
+    const genNOD = String(nod(genNum1, genNum2));
+    const genQuestion = `${genNum1} ${genNum2}`;
+    return [genQuestion, genNOD];
+  };
+  return [instruction, generator];
+};
+
 const playGame = (game, numCorrectGames = 3, maxNum = 50) => {
   sayWelcome();
   const name = questionNameAndSayHello();
@@ -59,5 +72,6 @@ const playGame = (game, numCorrectGames = 3, maxNum = 50) => {
 };
 
 export {
-  sayWelcome, questionNameAndSayHello, congratulate, gameOfEven, gameOfCalc, playGame,
+  sayWelcome, questionNameAndSayHello, congratulate,
+  gameOfEven, gameOfCalc, gameOfGCD, playGame,
 };

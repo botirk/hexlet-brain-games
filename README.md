@@ -16,3 +16,7 @@ How to run brain-calc after local install:
 1. repeat after video
 [![asciicast](https://asciinema.org/a/JJWjjI50DCAkSBoR965gzp8ev.svg)](https://asciinema.org/a/JJWjjI50DCAkSBoR965gzp8ev)
 
+How to run brain-gcd after global install:
+1. repeat after video
+[![asciicast](https://asciinema.org/a/9pPzzASTeGvf5gKsaq51A7YvC.svg)](https://asciinema.org/a/9pPzzASTeGvf5gKsaq51A7YvC)
+
