@@ -5,19 +5,24 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-// every game returns [string, function] function is generator of [question, answer]
-var _default = (maxNum = 50) => () => {
-  const instruction = 'Anwser "yes" if number even otherwise answer "no"';
+var _utils = _interopRequireDefault(require("../utils"));
 
-  const generator = () => {
-    const generatedNumber = Math.floor(Math.random() * maxNum);
-    const isEven = generatedNumber % 2 === 0;
-    const result = isEven ? 'yes' : 'no';
-    return [generatedNumber, result];
-  };
+var _ = require("..");
 
-  return [instruction, generator];
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const instruction = 'Anwser "yes" if number even otherwise answer "no"';
+const minNum = 1;
+const maxNum = 50;
+
+const generator = () => {
+  const question = (0, _utils.default)(minNum, maxNum);
+  const isEven = question % 2 === 0;
+  const correctAnswer = isEven ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
 
+var _default = () => (0, _.playGame)(instruction, generator);
+
 exports.default = _default;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9nYW1lcy9ldmVuLmpzIl0sIm5hbWVzIjpbIm1heE51bSIsImluc3RydWN0aW9uIiwiZ2VuZXJhdG9yIiwiZ2VuZXJhdGVkTnVtYmVyIiwiTWF0aCIsImZsb29yIiwicmFuZG9tIiwiaXNFdmVuIiwicmVzdWx0Il0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7ZUFDZSxDQUFDQSxNQUFNLEdBQUcsRUFBVixLQUFpQixNQUFNO0FBQ3BDLFFBQU1DLFdBQVcsR0FBRyxtREFBcEI7O0FBQ0EsUUFBTUMsU0FBUyxHQUFHLE1BQU07QUFDdEIsVUFBTUMsZUFBZSxHQUFHQyxJQUFJLENBQUNDLEtBQUwsQ0FBV0QsSUFBSSxDQUFDRSxNQUFMLEtBQWdCTixNQUEzQixDQUF4QjtBQUNBLFVBQU1PLE1BQU0sR0FBSUosZUFBZSxHQUFHLENBQWxCLEtBQXdCLENBQXhDO0FBQ0EsVUFBTUssTUFBTSxHQUFJRCxNQUFNLEdBQUcsS0FBSCxHQUFXLElBQWpDO0FBQ0EsV0FBTyxDQUFDSixlQUFELEVBQWtCSyxNQUFsQixDQUFQO0FBQ0QsR0FMRDs7QUFNQSxTQUFPLENBQUNQLFdBQUQsRUFBY0MsU0FBZCxDQUFQO0FBQ0QsQyIsInNvdXJjZXNDb250ZW50IjpbIi8vIGV2ZXJ5IGdhbWUgcmV0dXJucyBbc3RyaW5nLCBmdW5jdGlvbl0gZnVuY3Rpb24gaXMgZ2VuZXJhdG9yIG9mIFtxdWVzdGlvbiwgYW5zd2VyXVxuZXhwb3J0IGRlZmF1bHQgKG1heE51bSA9IDUwKSA9PiAoKSA9PiB7XG4gIGNvbnN0IGluc3RydWN0aW9uID0gJ0Fud3NlciBcInllc1wiIGlmIG51bWJlciBldmVuIG90aGVyd2lzZSBhbnN3ZXIgXCJub1wiJztcbiAgY29uc3QgZ2VuZXJhdG9yID0gKCkgPT4ge1xuICAgIGNvbnN0IGdlbmVyYXRlZE51bWJlciA9IE1hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIG1heE51bSk7XG4gICAgY29uc3QgaXNFdmVuID0gKGdlbmVyYXRlZE51bWJlciAlIDIgPT09IDApO1xuICAgIGNvbnN0IHJlc3VsdCA9IChpc0V2ZW4gPyAneWVzJyA6ICdubycpO1xuICAgIHJldHVybiBbZ2VuZXJhdGVkTnVtYmVyLCByZXN1bHRdO1xuICB9O1xuICByZXR1cm4gW2luc3RydWN0aW9uLCBnZW5lcmF0b3JdO1xufTsiXX0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9nYW1lcy9ldmVuLmpzIl0sIm5hbWVzIjpbImluc3RydWN0aW9uIiwibWluTnVtIiwibWF4TnVtIiwiZ2VuZXJhdG9yIiwicXVlc3Rpb24iLCJpc0V2ZW4iLCJjb3JyZWN0QW5zd2VyIl0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7O0FBQ0E7Ozs7QUFFQSxNQUFNQSxXQUFXLEdBQUcsbURBQXBCO0FBQ0EsTUFBTUMsTUFBTSxHQUFHLENBQWY7QUFDQSxNQUFNQyxNQUFNLEdBQUcsRUFBZjs7QUFDQSxNQUFNQyxTQUFTLEdBQUcsTUFBTTtBQUN0QixRQUFNQyxRQUFRLEdBQUcsb0JBQWtCSCxNQUFsQixFQUEwQkMsTUFBMUIsQ0FBakI7QUFDQSxRQUFNRyxNQUFNLEdBQUlELFFBQVEsR0FBRyxDQUFYLEtBQWlCLENBQWpDO0FBQ0EsUUFBTUUsYUFBYSxHQUFJRCxNQUFNLEdBQUcsS0FBSCxHQUFXLElBQXhDO0FBQ0EsU0FBTyxDQUFDRCxRQUFELEVBQVdFLGFBQVgsQ0FBUDtBQUNELENBTEQ7O2VBTWUsTUFBTSxnQkFBU04sV0FBVCxFQUFzQkcsU0FBdEIsQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBnZW5lcmF0ZVJhbmRvbU51bSBmcm9tICcuLi91dGlscyc7XG5pbXBvcnQgeyBwbGF5R2FtZSB9IGZyb20gJy4uJztcblxuY29uc3QgaW5zdHJ1Y3Rpb24gPSAnQW53c2VyIFwieWVzXCIgaWYgbnVtYmVyIGV2ZW4gb3RoZXJ3aXNlIGFuc3dlciBcIm5vXCInO1xuY29uc3QgbWluTnVtID0gMTtcbmNvbnN0IG1heE51bSA9IDUwO1xuY29uc3QgZ2VuZXJhdG9yID0gKCkgPT4ge1xuICBjb25zdCBxdWVzdGlvbiA9IGdlbmVyYXRlUmFuZG9tTnVtKG1pbk51bSwgbWF4TnVtKTtcbiAgY29uc3QgaXNFdmVuID0gKHF1ZXN0aW9uICUgMiA9PT0gMCk7XG4gIGNvbnN0IGNvcnJlY3RBbnN3ZXIgPSAoaXNFdmVuID8gJ3llcycgOiAnbm8nKTtcbiAgcmV0dXJuIFtxdWVzdGlvbiwgY29ycmVjdEFuc3dlcl07XG59O1xuZXhwb3J0IGRlZmF1bHQgKCkgPT4gcGxheUdhbWUoaW5zdHJ1Y3Rpb24sIGdlbmVyYXRvcik7XG4iXX0=

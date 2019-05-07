@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-
-import { sayWelcome, questionNameAndSayHello } from '../index';
+import { sayWelcome, questionNameAndSayHello } from '..';
 
 sayWelcome();
 questionNameAndSayHello();

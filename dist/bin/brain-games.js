@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 "use strict";
 
-var _index = require("../index");
+var _ = require("..");
 
-(0, _index.sayWelcome)();
-(0, _index.questionNameAndSayHello)();
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9iaW4vYnJhaW4tZ2FtZXMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztBQUVBOztBQUVBO0FBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIjIS91c3IvYmluL2VudiBub2RlXG5cbmltcG9ydCB7IHNheVdlbGNvbWUsIHF1ZXN0aW9uTmFtZUFuZFNheUhlbGxvIH0gZnJvbSAnLi4vaW5kZXgnO1xuXG5zYXlXZWxjb21lKCk7XG5xdWVzdGlvbk5hbWVBbmRTYXlIZWxsbygpO1xuIl19
+(0, _.sayWelcome)();
+(0, _.questionNameAndSayHello)();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9iaW4vYnJhaW4tZ2FtZXMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztBQUNBOztBQUVBO0FBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIjIS91c3IvYmluL2VudiBub2RlXG5pbXBvcnQgeyBzYXlXZWxjb21lLCBxdWVzdGlvbk5hbWVBbmRTYXlIZWxsbyB9IGZyb20gJy4uJztcblxuc2F5V2VsY29tZSgpO1xucXVlc3Rpb25OYW1lQW5kU2F5SGVsbG8oKTtcbiJdfQ==

@@ -1,11 +1,13 @@
-// every game returns [string, function] function is generator of [question, answer]
-export default (maxNum = 50) => () => {
-  const instruction = 'Anwser "yes" if number even otherwise answer "no"';
-  const generator = () => {
-    const generatedNumber = Math.floor(Math.random() * maxNum);
-    const isEven = (generatedNumber % 2 === 0);
-    const result = (isEven ? 'yes' : 'no');
-    return [generatedNumber, result];
-  };
-  return [instruction, generator];
+import generateRandomNum from '../utils';
+import { playGame } from '..';
+
+const instruction = 'Anwser "yes" if number even otherwise answer "no"';
+const minNum = 1;
+const maxNum = 50;
+const generator = () => {
+  const question = generateRandomNum(minNum, maxNum);
+  const isEven = (question % 2 === 0);
+  const correctAnswer = (isEven ? 'yes' : 'no');
+  return [question, correctAnswer];
 };
+export default () => playGame(instruction, generator);

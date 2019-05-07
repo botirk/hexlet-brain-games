@@ -1,26 +1,29 @@
-export default (maxNum = 50, progCount = 10, minStep = 2,
-  maxStep = minStep + 9) => () => {
-  // you cant guess progression with less than 3 numbers, so fix it
-  const alteredProgCount = progCount < 3 ? 3 : progCount;
-  const instruction = 'What number is missing in the progression?';
-  const generator = () => {
-    // step for array of numbers
-    const step = minStep + Math.floor(Math.random() * maxStep);
-    // iterative process - generates array
-    const genIter = (result, lastNum, i) => {
-      if (i === 0) return result;
-      const newLastNum = lastNum + step;
-      result.push(newLastNum);
-      return genIter(result, newLastNum, i - 1);
-    };
-    const genProgression = genIter([], Math.floor(Math.random() * maxNum), alteredProgCount);
-    // generated missing number index
-    const genMissingNumIndex = Math.floor(Math.random() * alteredProgCount);
-    const answer = String(genProgression[genMissingNumIndex]);
-    // replace missing index with two dots
-    genProgression[genMissingNumIndex] = '..';
-    const question = genProgression.join(' ');
-    return [question, answer];
+import { playGame } from '..';
+import generateRandomNum from '../utils';
+
+const instruction = 'What number is missing in the progression?';
+const minNum = 1;
+const maxNum = 50;
+const progCount = 10;
+const minStep = 2;
+const maxStep = minStep + 9;
+const generator = () => {
+  // step for array of numbers
+  const step = generateRandomNum(minStep, maxStep);
+  // iterative process - generates array of numbers
+  const genIter = (array, lastNum, i) => {
+    if (i === 0) return array;
+    const newLastNum = lastNum + step;
+    array.push(newLastNum);
+    return genIter(array, newLastNum, i - 1);
   };
-  return [instruction, generator];
+  const progression = genIter([], generateRandomNum(minNum, maxNum), progCount);
+  // generated missing index from generated array
+  const missingIndex = generateRandomNum(0, progCount);
+  const correctAnswer = String(progression[missingIndex]);
+  // replace missing index with two dots
+  progression[missingIndex] = '..';
+  const question = progression.join(' ');
+  return [question, correctAnswer];
 };
+export default () => playGame(instruction, generator);

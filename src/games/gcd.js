@@ -1,12 +1,15 @@
-export default (maxNum = 50) => () => {
-  const instruction = 'Find the greatest common divisor of given numbers.';
-  const generator = () => {
-    const genNum1 = Math.floor(Math.random() * maxNum);
-    const genNum2 = Math.floor(Math.random() * maxNum);
-    const nod = (a, b) => (b > 0 ? nod(b, a % b) : a);
-    const genNOD = String(nod(genNum1, genNum2));
-    const genQuestion = `${genNum1} ${genNum2}`;
-    return [genQuestion, genNOD];
-  };
-  return [instruction, generator];
+import { playGame } from '..';
+import generateRandomNum from '../utils';
+
+const instruction = 'Find the greatest common divisor of given numbers.';
+const gcd = (a, b) => (b > 0 ? gcd(b, a % b) : a);
+const minNum = 2;
+const maxNum = 50;
+const generator = () => {
+  const num1 = generateRandomNum(minNum, maxNum);
+  const num2 = generateRandomNum(minNum, maxNum);
+  const question = `${num1} ${num2}`;
+  const correctAnswer = String(gcd(num1, num2));
+  return [question, correctAnswer];
 };
+export default () => playGame(instruction, generator);

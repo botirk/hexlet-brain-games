@@ -1,17 +1,21 @@
-export default (maxNum = 50, maxNum2 = maxNum / 5) => () => {
-  const instruction = 'What is result of the expression?';
-  const generator = () => {
-    const genNum1 = Math.floor(Math.random() * maxNum);
-    const genNum2 = Math.floor(Math.random() * maxNum2);
-    const expSymbols = [
-      { str: '+', f: (a, b) => a + b },
-      { str: '-', f: (a, b) => a - b },
-      { str: '*', f: (a, b) => a * b },
-    ];
-    const transSymbol = expSymbols[Math.floor(Math.random() * 3)];
-    const genQuestion = `${genNum1} ${transSymbol.str} ${genNum2}`;
-    const result = String(transSymbol.f(genNum1, genNum2));
-    return [genQuestion, result];
-  };
-  return [instruction, generator];
+import { playGame } from '..';
+import generateRandomNum from '../utils';
+
+const instruction = 'What is result of the expression?';
+const minNum = 1;
+const maxNum = 50;
+const maxNum2 = maxNum / 5;
+const expressionSymbols = [
+  { str: '+', f: (a, b) => a + b },
+  { str: '-', f: (a, b) => a - b },
+  { str: '*', f: (a, b) => a * b },
+];
+const generator = () => {
+  const num1 = generateRandomNum(minNum, maxNum);
+  const num2 = generateRandomNum(minNum, maxNum2);
+  const currentSymbol = expressionSymbols[generateRandomNum(0, expressionSymbols.length)];
+  const question = `${num1} ${currentSymbol.str} ${num2}`;
+  const correctAnswer = String(currentSymbol.f(num1, num2));
+  return [question, correctAnswer];
 };
+export default () => playGame(instruction, generator);
