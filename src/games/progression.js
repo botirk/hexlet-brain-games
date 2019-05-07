@@ -1,28 +1,30 @@
-import { playGame } from '..';
 import generateRandomNum from '../utils';
+import playGame from '..';
 
 const instruction = 'What number is missing in the progression?';
+// please: progCount must be >= 3
 const minNum = 1;
 const maxNum = 50;
 const progCount = 10;
 const minStep = 2;
 const maxStep = minStep + 9;
-const generator = () => {
-  // step for array of numbers
+
+const generateProgression = () => {
   const step = generateRandomNum(minStep, maxStep);
-  // iterative process - generates array of numbers
-  const genIter = (array, lastNum, i) => {
-    if (i === 0) return array;
-    const newLastNum = lastNum + step;
-    array.push(newLastNum);
-    return genIter(array, newLastNum, i - 1);
-  };
-  const progression = genIter([], generateRandomNum(minNum, maxNum), progCount);
-  // generated missing index from generated array
-  const missingIndex = generateRandomNum(0, progCount);
-  const correctAnswer = String(progression[missingIndex]);
-  // replace missing index with two dots
-  progression[missingIndex] = '..';
+  const result = [generateRandomNum(minNum, maxNum)];
+  for (let i = 1; i < progCount; i += 1) {
+    result.push(result[0] + step * i);
+  }
+  return result;
+};
+
+const generator = () => {
+  const progression = generateProgression();
+  // generated hiden index from generated array
+  const hiddenIndex = generateRandomNum(0, progCount);
+  const correctAnswer = String(progression[hiddenIndex]);
+  // replace hidden index with two dots
+  progression[hiddenIndex] = '..';
   const question = progression.join(' ');
   return [question, correctAnswer];
 };
