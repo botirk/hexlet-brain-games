@@ -1,5 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/af5e5f64998e3d6bfd52/maintainability)](https://codeclimate.com/github/botirk/project-lvl1-s486/maintainability)
-[![Build Status](https://travis-ci.org/botirk/project-lvl1-s486.svg?branch=master)](https://travis-ci.org/botirk/project-lvl1-s486)
+[![Build Status](https://travis-ci.org/botirk/hexlet-brain-games.svg?branch=master)](https://travis-ci.org/botirk/hexlet-brain-games)
 
 How to install:
 1. curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
