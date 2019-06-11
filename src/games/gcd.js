@@ -1,5 +1,5 @@
 import generateRandomNum from '../utils';
-import playGame from '..';
+import { playGame } from '..';
 
 const instruction = 'Find the greatest common divisor of given numbers.';
 

@@ -1,5 +1,5 @@
 import generateRandomNum from '../utils';
-import playGame from '..';
+import { playGame } from '..';
 
 const instruction = 'What is result of the expression?';
 

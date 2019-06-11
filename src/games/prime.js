@@ -1,5 +1,5 @@
 import generateRandomNum from '../utils';
-import playGame from '..';
+import { playGame } from '..';
 
 const instruction = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 

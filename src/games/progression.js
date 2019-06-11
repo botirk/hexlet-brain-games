@@ -1,5 +1,5 @@
 import generateRandomNum from '../utils';
-import playGame from '..';
+import { playGame } from '..';
 
 const instruction = 'What number is missing in the progression?';
 // please: progCount must be >= 3

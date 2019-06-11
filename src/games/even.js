@@ -1,5 +1,5 @@
 import generateRandomNum from '../utils';
-import playGame from '..';
+import { playGame } from '..';
 
 const instruction = 'Anwser "yes" if number even otherwise answer "no"';
 
